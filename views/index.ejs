@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather!!!</title>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+/>
+</head>
+<body>
+  <div class="container">
+
+    <h1>Weather is fun</h1>
+    <form onsubmit="handleForm"> //put an on submit here, no more post or action
+      <input type="text" name="city" placeholder="enter city name">
+      <input type="text" name="zip" placeholder="or enter the postal code">
+      <button>Submit</button>
+    </form>
+    <p><%= city %></p>
+    <p><%= date %></p>
+    <p>Temperature: <span id="temp"><%= temperature %></span></p>
+    <button id="standard">Celcius/Imperial</button>
+    <p>Humidity: <%= humidity %></p>
+    <p>Pressure: <%= pressure %></p>
+    <p>Description: <%= description %></p>
+    <p>Wind: <%= wind.direction %><%= wind.velocity %></p>
+
+  </div>
+  <script>
+
+    let isCelcius = true
+    const temp = document.getElementById('temp')
+    const toggle = document.getElementById('standard')
+    const celciusTemp = +temp.textContent
+    toggle.addEventListener('click', event => {
+      event.preventDefault()
+      isCelcius != !isCelcius
+      console.log("celcius?", isCelcius)
+      temp.textContent = isCelcius ? celciusTemp : (celciusTemp * 9 / 5) + 32
+    })
+  </script>
+
+  <script>
+    //get reference form
+    function handleForm(e) {
+      e.preventDefault()
+      console.log('submit!')
+      form = document.querySelector('form')
+
+    }
+
+    //when form is submitted, check cookie status:
+    // no cookie or cookie is expired then make a post to the back end as per normal
+    // otherwise use cached data
+    // and set city and imp/celcius option in localstorage
+  </script>
+</body>
+</html>
