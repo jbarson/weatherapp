@@ -13,11 +13,13 @@
   <div class="container">
 
     <h1>Weather is fun</h1>
-    <form onsubmit="handleForm"> //put an on submit here, no more post or action
+    <form>
       <input type="text" name="city" placeholder="enter city name">
       <input type="text" name="zip" placeholder="or enter the postal code">
       <button>Submit</button>
     </form>
+    <h2>Weather for <%= city %></h2>
+
     <p><%= city %></p>
     <p><%= date %></p>
     <p>Temperature: <span id="temp"><%= temperature %></span></p>
@@ -36,7 +38,8 @@
     const celciusTemp = +temp.textContent
     toggle.addEventListener('click', event => {
       event.preventDefault()
-      isCelcius != !isCelcius
+      isCelcius = !isCelcius
+
       console.log("celcius?", isCelcius)
       temp.textContent = isCelcius ? celciusTemp : (celciusTemp * 9 / 5) + 32
     })
@@ -44,12 +47,14 @@
 
   <script>
     //get reference form
+    const form = document.querySelector('form')
+    form.addEventListener('submit', handleForm)
     function handleForm(e) {
       e.preventDefault()
       console.log('submit!')
-      form = document.querySelector('form')
-
+      document.cookie = 'city=Toronto;'
     }
+
 
     //when form is submitted, check cookie status:
     // no cookie or cookie is expired then make a post to the back end as per normal

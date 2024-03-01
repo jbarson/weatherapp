@@ -1,0 +1,23 @@
+[
+  {
+    "zip": "M4L 2K5",
+    "city": "toronto",
+    "date": "Monday, March 1st, 2024",
+    "description": "cold, rainy",
+    "temperature": 5,
+    "pressure": 101.2,
+    "humidity":50,
+    "wind": {"direction": "ene", "velocity": 20 },
+    "tenDay": [
+      {"date": "Monday, March 1st, 2024", "description": "cold, rainy", "temperature": 5, "pressure": 101.2, "humidity":50, "wind": {"direction": "ene", "velocity": 20 }},
+      {"date": "Tuesday, March 2nd, 2024", "description": "cold, rainy", "temperature": 5, "pressure": 101.2, "humidity":50, "wind": {"direction": "ene", "velocity": 20 }},
+      {"date": "Wednesday, March 3rd, 2024", "description": "cold, rainy", "temperature": 5, "pressure": 101.2, "humidity":50, "wind": {"direction": "ene", "velocity": 20 }},
+      {"date": "Thursday, March 4th, 2024", "description": "cold, rainy", "temperature": 5, "pressure": 101.2, "humidity":50, "wind": {"direction": "ene", "velocity": 20 }},
+      {"date": "Friday, March 5th, 2024", "description": "cold, rainy", "temperature": 5, "pressure": 101.2, "humidity":50, "wind": {"direction": "ene", "velocity": 20 }},
+      {"date": "Saturday, March 6th, 2024", "description": "cold, rainy", "temperature": 5, "pressure": 101.2, "humidity":50, "wind": {"direction": "ene", "velocity": 20 }},
+      {"date": "Sunday, March 7th, 2024", "description": "cold, rainy", "temperature": 5, "pressure": 101.2, "humidity":50, "wind": {"direction": "ene", "velocity": 20 }},
+      {"date": "Monday, March 8th, 2024", "description": "cold, rainy", "temperature": 5, "pressure": 101.2, "humidity":50, "wind": {"direction": "ene", "velocity": 20 }},
+      {"date": "Tuesday, March 9th, 2024", "description": "cold, rainy", "temperature": 5, "pressure": 101.2, "humidity":50, "wind": {"direction": "ene", "velocity": 20 }}
+    ]
+  }
+]

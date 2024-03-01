@@ -1,11 +1,12 @@
-import express from 'express';
+const express = require('express') ;
+const fs = require('fs').promises
 
 const app = express()
 const PORT = 3005
 
-import weatherData from './data/weather.js';
+// import weatherData from './data/weather.js';
 
-console.log(weatherData)
+// console.log(weatherData)
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
@@ -16,9 +17,12 @@ const findCityByZip = (zip) =>{
     .find(city => city.zip === zip)
 }
 
+let weatherData = {}
+fs.readFile('./weather.json').then(data => weatherData = JSON.parse(data))
+
 app.get('/', (_req, res) => {
   const templateVars = weatherData.toronto
-  console.log(Object.values(weatherData))
+  // console.log(Object.values(weatherData))
   res.render('index', templateVars)
 })
 
